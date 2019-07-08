@@ -8,7 +8,7 @@ fetch(`https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
         console.log(input.value)
         document.querySelector('ul').innerHTML = '';
     data.forEach(e => {
-        if(e.city.toLowerCase().includes(document.querySelector('input').value) && document.querySelector('input').value !== '') {
+        if(e.city.toLowerCase().includes(document.querySelector('input').value.toLowerCase()) && document.querySelector('input').value !== '') {
             document.querySelector('ul').insertAdjacentHTML('afterbegin', `<li> ${e.city.slice(0, e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(0)))}    <span>${e.city.slice(e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(0)),  e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(input.value.length -1)) + 1)}</span> ${e.city.slice(e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(input.value.length -1)) + 1 )} </li>`)
         }
     });
