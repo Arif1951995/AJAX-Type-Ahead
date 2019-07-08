@@ -7,16 +7,16 @@ fetch(`https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
     // document.querySelector('input').addEventListener('keyup', () => {
     //    typeAhead(data);
     // })
-    document.querySelector('input').addEventListener('input', () => {
-        typeAhead(data);
-     })
+//     document.querySelector('input').addEventListener('input', () => {
+//         typeAhead(data);
+//      })
 })
 .catch(error => {
     document.write(error);
 }) 
 
 function typeAhead(data) {
-    alert('asd');
+    alert(input.value);
     document.querySelector('ul').innerHTML = '';
     if(document.querySelector('input').value === '') {
     document.querySelector('ul').innerHTML = '';
