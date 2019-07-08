@@ -16,6 +16,7 @@ fetch(`https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
 }) 
 
 function typeAhead(data) {
+    alert('asd');
     document.querySelector('ul').innerHTML = '';
     if(document.querySelector('input').value === '') {
     document.querySelector('ul').innerHTML = '';
