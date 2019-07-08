@@ -4,9 +4,9 @@ fetch(`https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
     return result.json();
 })
 .then(data => {
-    document.querySelector('input').addEventListener('keyup', () => {
-       typeAhead(data);
-    })
+    // document.querySelector('input').addEventListener('keyup', () => {
+    //    typeAhead(data);
+    // })
     document.querySelector('input').addEventListener('input', () => {
         typeAhead(data);
      })
