@@ -4,18 +4,10 @@ fetch(`https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
     return result.json();
 })
 .then(data => {
-    // document.querySelector('input').addEventListener('keyup', () => {
-    //    typeAhead(data);
-    // })
     document.querySelector('input').addEventListener('input', () => {
         console.log(input.value)
         document.querySelector('ul').innerHTML = '';
-        if(document.querySelector('input').value === '') {
-        document.querySelector('ul').innerHTML = '';
-    
-        }
     data.forEach(e => {
-        document.querySelector('ul').insertAdjacentHTML('afterbegin', `<li>${input.value} </li>`);
         if(e.city.toLowerCase().includes(document.querySelector('input').value) && document.querySelector('input').value !== '') {
             document.querySelector('ul').insertAdjacentHTML('afterbegin', `<li> ${e.city.slice(0, e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(0)))}    <span>${e.city.slice(e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(0)),  e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(input.value.length -1)) + 1)}</span> ${e.city.slice(e.city.toLowerCase().indexOf(input.value.toLowerCase().charAt(input.value.length -1)) + 1 )} </li>`)
         }
